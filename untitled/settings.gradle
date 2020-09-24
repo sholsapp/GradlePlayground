@@ -1,0 +1,13 @@
+pluginManagement {
+  repositories {
+    ivy {
+      url "file:////tmp/ivy-repo"
+      patternLayout {
+        artifact "[organization]/[module]/[revision]/[artifact]-[revision].[ext]"
+      }
+    }
+    gradlePluginPortal()
+  }
+}
+
+rootProject.name = 'untitled'

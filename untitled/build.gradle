@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'org.example.buildsystem' version '1.0-SNAPSHOT' apply true
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.http-client:google-http-client-apache-v2:1.36.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+publishing {
+    publications {
+        ivy(IvyPublication) {
+            from components.java
+            organisation = "com.untitled"
+            module = "Main"
+            revision = "1.0-SNAPSHOT"
+        }
+    }
+}
+
+
